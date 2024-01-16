@@ -29,6 +29,7 @@ jobs:
         mysql version: '8.0'
         mysql database: 'istory'
         mysql root password: ${{ secrets.MYSQL_ROOT_PASSWORD }}
+        # 이 아래 두 개는 없어도 됨
         mysql user: ${{ secrets.MYSQL_USER }}
         mysql password: ${{ secrets.MYSQL_PASSWORD }}
 
