@@ -10,10 +10,6 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-    - name: 0. change exec mode
-      run: chmod +x gradlew
-
-
     - name: 1. CheckOut Source
       uses: actions/checkout@v3
 
