@@ -40,7 +40,7 @@ jobs:
         arguments: build
 
     - name: 6. Docker Image build
-      run: docker build ./xinfra/docker -t dangtong/istory -f ./xinfra/docker/Dockerfile
+      run: docker build ./xinfra/docker -t ${{ secrets.DOCKER_USERNAME }}/istory -f ./xinfra/docker/Dockerfile
 
     - name: 7. Docker login
       uses: docker/login-action@v3.0.0
