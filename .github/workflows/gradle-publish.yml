@@ -30,6 +30,7 @@ jobs:
         mysql database: 'istory'
         mysql root password: ${{ secrets.MYSQL_ROOT_PASSWORD }}
         # 이 아래 두 개는 없어도 됨
+        # 에러나면 mysql user가 아니라 mysql username으로 수정....
         mysql user: ${{ secrets.MYSQL_USER }}
         mysql password: ${{ secrets.MYSQL_PASSWORD }}
 
@@ -38,6 +39,8 @@ jobs:
       with:
         arguments: build
 
+    - name: 6. Docker Image build
+      run: docker build ./xinfra/docker -t dangtong/istory -f ./xinfra/docker/Dockerfile
 
 #    - name: Publish to GitHub Packages
 #      uses: gradle/gradle-build-action@bd5760595778326ba7f1441bcf7e88b49de61a25 # v2.6.0
